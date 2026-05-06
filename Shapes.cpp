@@ -139,17 +139,49 @@ int main()
 
     Square square;
     SquareInitialize(&square, 7); // square with side-length 7
+    
+    Circle c2;
+    CircleInitialize(&c2, 1.5); // circle with radius 1.5
+    
+    Circle c3;
+    CircleInitialize(&c3, 0.25); // circle with radius 0.25
 
-    Shape* shapes[4];
-    shapes[0]=(Shape*)&circle ;
-    shapes[1]=(Shape*)&rectangle ;
-    shapes[2]=(Shape*)&ellipse ;
-    shapes[3]=(Shape*)&square ;
+    Rectangle r2;
+    RectangleInitialize(&r2, 10, 10); // A rectangle that is a square width 10 and height 10
+    
+    Rectangle r3;
+    RectangleInitialize(&r3, 0.5, 2.0); // A rectangle with width 0.5 and height 2.0
+
+    Ellipse e2; 
+    EllipseInitialize(&e2, 5, 5);  // An ellipse that is a circle with radius 5,5
+    
+    Ellipse e3; 
+    EllipseInitialize(&e3, 1, 10); // An ellipse with radius 1,10
+
+    Square s2; 
+    SquareInitialize(&s2, 12.5); // square with side-length 12.5
+    
+    Square s3; 
+    SquareInitialize(&s3, 1); // square with side-length 1
+    
+    Shape* shapes[12];
+    shapes[0]  = (Shape*)&circle;
+    shapes[1]  = (Shape*)&rectangle;
+    shapes[2]  = (Shape*)&ellipse;
+    shapes[3]  = (Shape*)&square;
+    shapes[4]  = (Shape*)&c2;
+    shapes[5]  = (Shape*)&c3;
+    shapes[6]  = (Shape*)&r2;
+    shapes[7]  = (Shape*)&r3;
+    shapes[8]  = (Shape*)&e2;
+    shapes[9]  = (Shape*)&e3;
+    shapes[10] = (Shape*)&s2;
+    shapes[11] = (Shape*)&s3;
 
     double total_area=0;
 
     int i;
-    for(i=0;i<4;i++)
+    for(i=0;i<12;i++)
     {
         double d=GetArea(shapes[i]);
         total_area+=d;
