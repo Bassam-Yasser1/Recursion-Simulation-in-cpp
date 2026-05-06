@@ -189,6 +189,6 @@ int main()
     }
     
     cout<<total_area<<endl; // check if the value is correct
-
+    // value should be 1130.62
     return 0;
 }
